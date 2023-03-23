@@ -1,0 +1,32 @@
+6.	Find Error/Output in follwing code:
+
+main() {
+
+    int a = 10;      
+
+    if ((fork ( ) == 0))      
+
+    a++;      
+
+    printf ("%dn", a ); 
+
+}
+
+CORRECT CODE:-
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+    int a = 10;
+    if (fork() == 0) {
+        a++;
+        printf("Child process: a = %d\n", a);
+    }
+    else {
+        printf("Parent process: a = %d\n", a);
+    }
+    return 0;
+}
+OUTPUT:-
+Parent process: a = 10
+Child process: a = 11
