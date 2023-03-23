@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int freq[256] = {0}, max = 0;
+    char max_char;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+    for(int i = 0; i < strlen(str); i++) {
+        freq[str[i]]++;
+    }
+
+    for(int i = 0; i < 256; i++) {
+        if(freq[i] > max) {
+            max = freq[i];
+            max_char = i;
+        }
+    }
+
+    printf("The maximum occurring character in the string \"%s\" is '%c'\n", str, max_char);
+
+    return 0;
+}
+OUTPUT:-
+Enter a string: hello world
+The maximum occurring character in the string "hello world" is 'l'
