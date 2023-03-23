@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_NAMES 100
+#define MAX_NAME_LENGTH 50
+
+void sortNames(char names[MAX_NAMES][MAX_NAME_LENGTH], int numNames, int ascending);
+
+int main() {
+    char names[MAX_NAMES][MAX_NAME_LENGTH];
+    int numNames, i, ascending;
+
+    printf("Enter the number of names to sort (max %d): ", MAX_NAMES);
+    scanf("%d", &numNames);
+
+    printf("Enter the names:\n");
+    for (i = 0; i < numNames; i++) {
+        scanf("%s", names[i]);
+    }
+
+    printf("Sort in ascending order (1) or descending order (0): ");
+    scanf("%d", &ascending);
+
+    sortNames(names, numNames, ascending);
+
+    printf("Sorted names:\n");
+    for (i = 0; i < numNames; i++) {
+        printf("%s\n", names[i]);
+    }
+
+    return 0;
+    }}
